@@ -1,5 +1,2 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y nginx
-ENTRYPOINT [“/usr/sbin/nginx”,”-g”,”daemon off;”]
-EXPOSE 80
+FROM docker.io/centos
+RUN echo "hello" > /root/1.txt
