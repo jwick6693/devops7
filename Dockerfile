@@ -1,4 +1,6 @@
-FROM openjdk:8
-EXPOSE 8081
-ADD target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
-#ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
+FROM ubuntu
+MAINTAINER Romin Irani (email@domain.com)
+RUN apt-get update
+RUN apt-get install -y nginx
+ENTRYPOINT [“/usr/sbin/nginx”,”-g”,”daemon off;”]
+EXPOSE 80
